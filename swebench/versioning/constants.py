@@ -19,6 +19,7 @@ MAP_REPO_TO_VERSION_PATHS = {
     "scikit-learn/scikit-learn": ["sklearn/__init__.py"],
     "sphinx-doc/sphinx": ["sphinx/__init__.py"],
     "sympy/sympy": ["sympy/release.py", "sympy/__init__.py"],
+    "pytorch/torchtune": ["version.txt"]
 }
 
 # Cosntants - Task Instance Version Regex Pattern
@@ -52,5 +53,8 @@ MAP_REPO_TO_VERSION_PATTERNS.update(
 )
 MAP_REPO_TO_VERSION_PATTERNS.update({k: [r"(.*)"] for k in ["Qiskit/qiskit"]})
 MAP_REPO_TO_VERSION_PATTERNS.update({k: [r"version_info = [\d]+,[\d\s]+,"] for k in ["pyvista/pyvista"]})
+MAP_REPO_TO_VERSION_PATTERNS.update({
+    "pytorch/torchtune": [r"(.*)"]
+})
 
 SWE_BENCH_URL_RAW = "https://raw.githubusercontent.com/"

@@ -911,6 +911,17 @@ SPECS_PYDICOM.update(
 
 SPECS_HUMANEVAL = {k: {"python": "3.9", "test_cmd": "python"} for k in ["1.0"]}
 
+SPECS_TORCHTUNE = {
+    k: {
+        "python": "3.10",
+        "install": "python -m pip install -e .[dev]",
+        "packages": "torch torchvision torchao",
+        "pip_packages": ["pytest"],
+        "test_cmd": TEST_PYTEST,
+    }
+    for k in ["0.2", "0.3", "0.4", "0.5"]
+}
+
 # Constants - Task Instance Instllation Environment
 MAP_REPO_VERSION_TO_SPECS = {
     "astropy/astropy": SPECS_ASTROPY,

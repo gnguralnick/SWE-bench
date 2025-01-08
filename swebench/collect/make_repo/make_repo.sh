@@ -12,12 +12,12 @@ REPO_TARGET=$1
 gh repo view "$REPO_TARGET" > /dev/null || exit 1
 
 # Set the organization and repository names
-ORG_NAME="swe-bench"
+ORG_NAME="gnguralnick"
 NEW_REPO_NAME="${REPO_TARGET//\//__}"
 
 # Check if the new repository already exists
-gh repo view "$ORG_NAME/$NEW_REPO_NAME" > /dev/null 2>&1
-if [ $? -eq 0 ]; then
+# Check if the new repository already exists
+if gh repo view "$ORG_NAME/$NEW_REPO_NAME" > /dev/null 2>&1; then
     echo "The repository $ORG_NAME/$NEW_REPO_NAME already exists."
     exit 1
 else
